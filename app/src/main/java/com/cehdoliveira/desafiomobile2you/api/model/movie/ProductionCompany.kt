@@ -1,4 +1,4 @@
-package com.cehdoliveira.desafiomobile2you.api.model
+package com.cehdoliveira.desafiomobile2you.api.model.movie
 
 data class ProductionCompany(
     val id: Int,
