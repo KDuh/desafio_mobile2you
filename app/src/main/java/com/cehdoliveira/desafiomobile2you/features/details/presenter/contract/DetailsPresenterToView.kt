@@ -1,4 +1,4 @@
-package com.cehdoliveira.desafiomobile2you.features.details.presenter
+package com.cehdoliveira.desafiomobile2you.features.details.presenter.contract
 
 interface DetailsPresenterToView {
     fun onCreate()

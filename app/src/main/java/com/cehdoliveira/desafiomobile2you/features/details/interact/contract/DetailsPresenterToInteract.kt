@@ -1,4 +1,4 @@
-package com.cehdoliveira.desafiomobile2you.features.details.interact
+package com.cehdoliveira.desafiomobile2you.features.details.interact.contract
 
 import android.content.Context
 import com.cehdoliveira.desafiomobile2you.storage.entity.MovieEntity

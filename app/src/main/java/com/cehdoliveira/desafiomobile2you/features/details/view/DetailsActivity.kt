@@ -16,8 +16,8 @@ import com.google.android.material.button.MaterialButton
 import com.cehdoliveira.desafiomobile2you.R
 import com.cehdoliveira.desafiomobile2you.api.model.similar.SimilarMovie
 import com.cehdoliveira.desafiomobile2you.features.details.presenter.DetailsPresenter
-import com.cehdoliveira.desafiomobile2you.features.details.presenter.DetailsPresenterToView
-import com.cehdoliveira.desafiomobile2you.features.details.presenter.DetailsViewToPresenter
+import com.cehdoliveira.desafiomobile2you.features.details.presenter.contract.DetailsPresenterToView
+import com.cehdoliveira.desafiomobile2you.features.details.presenter.contract.DetailsViewToPresenter
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.details_activity.*
 
@@ -38,6 +38,7 @@ class DetailsActivity : AppCompatActivity(), DetailsViewToPresenter {
     private var textViews: TextView? = null
     private var textError: TextView? = null
     private var imageError: ImageView? = null
+    private var imageBack: ImageView? = null
     private var buttonUpdate: MaterialButton? = null
     private var appBar: AppBarLayout? = null
 
@@ -60,6 +61,8 @@ class DetailsActivity : AppCompatActivity(), DetailsViewToPresenter {
         imageMovie = detailsActivity_imageView_background
         imageLike = detailsActivity_imageView_likes
         imageLike?.setOnClickListener { presenter.imageLikeTapped() }
+        imageBack = detailsActivity_imageView_back
+        imageBack?.setOnClickListener { onBackPressed() }
         textLikes = detailsActivity_textView_likes
         textViews = detailsActivity_textView_popularity
         textError = detailsActivity_textView_error

@@ -11,9 +11,12 @@ import com.cehdoliveira.desafiomobile2you.api.repository.ApiDataManager
 import com.cehdoliveira.desafiomobile2you.api.repository.InteractToApi
 import com.cehdoliveira.desafiomobile2you.api.model.similar.SimilarMovie
 import com.cehdoliveira.desafiomobile2you.api.model.similar.SimilarMovies
+import com.cehdoliveira.desafiomobile2you.features.details.interact.contract.DetailsInteractToPresenter
+import com.cehdoliveira.desafiomobile2you.features.details.interact.contract.DetailsPresenterToInteract
 import com.cehdoliveira.desafiomobile2you.utils.createImagePath
 
-class DetailsInteract(private val presenter: DetailsPresenterToInteract) : DetailsInteractToPresenter {
+class DetailsInteract(private val presenter: DetailsPresenterToInteract) :
+    DetailsInteractToPresenter {
 
     private val repository: InteractToApi = ApiDataManager()
     private val likeStorage = LikesStorage(presenter.context)
