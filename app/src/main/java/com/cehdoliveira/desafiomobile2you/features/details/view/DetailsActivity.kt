@@ -23,10 +23,9 @@ import kotlinx.android.synthetic.main.details_activity.*
 
 class DetailsActivity : AppCompatActivity(), DetailsViewToPresenter {
 
-    private val present: DetailsPresenterToView by lazy {
+    private val presenter: DetailsPresenterToView by lazy {
         DetailsPresenter(this)
     }
-
     private val adapter: SimilarMoviesAdapter by lazy {
         SimilarMoviesAdapter(mutableListOf())
     }
@@ -42,7 +41,7 @@ class DetailsActivity : AppCompatActivity(), DetailsViewToPresenter {
     private var buttonUpdate: MaterialButton? = null
     private var appBar: AppBarLayout? = null
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.details_activity)
         presenter.onCreate()
@@ -104,6 +103,7 @@ class DetailsActivity : AppCompatActivity(), DetailsViewToPresenter {
 
     override fun renderImageLikeFill() {
         imageLike?.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_favorite_white_24dp))
+
     }
 
     override fun renderImageLikeDefault() {
@@ -117,4 +117,5 @@ class DetailsActivity : AppCompatActivity(), DetailsViewToPresenter {
     companion object {
         const val TAG = "details-activity"
     }
+
 }

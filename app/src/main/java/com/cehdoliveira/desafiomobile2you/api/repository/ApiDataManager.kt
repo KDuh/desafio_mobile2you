@@ -7,7 +7,9 @@ import com.cehdoliveira.desafiomobile2you.api.OnGetMoviesDetailsCallback
 import com.cehdoliveira.desafiomobile2you.api.OnGetSimilarMoviesDetailsCallback
 import com.cehdoliveira.desafiomobile2you.api.model.movie.Movie
 import com.cehdoliveira.desafiomobile2you.api.model.similar.SimilarMovies
-
+import com.cehdoliveira.desafiomobile2you.utils.Constants.Companion.API_KEY
+import com.cehdoliveira.desafiomobile2you.utils.Constants.Companion.ID_MOVIE
+import com.cehdoliveira.desafiomobile2you.utils.Constants.Companion.PORTUGUES
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,8 +22,6 @@ class ApiDataManager : InteractToApi {
 
     companion object {
         const val TAG = "data-manager"
-        const val MOVIE_ID = 157336
-        const val LANGUAGE = "pt_BR"
     }
 
     init {
@@ -36,11 +36,13 @@ class ApiDataManager : InteractToApi {
     }
 
     override fun getMoviesDetails(callbackMoviesDetails: OnGetMoviesDetailsCallback) {
-        service.getMovieDetails(id = ID_ANGRY_BIRDS, apiKey = API_KEY, language = PORTUGUES)
+        service.getMovieDetails(id = ID_MOVIE, apiKey = API_KEY, language = PORTUGUES)
             .enqueue(object : Callback<Movie> {
                 override fun onResponse(call: Call<Movie>, response: Response<Movie> ) {
+
                     response.body()?.let { callbackMoviesDetails.onSuccess(it) }
                     Log.d(TAG, "response: ${response.body()} ")
+
                 }
 
                 override fun onFailure(call: Call<Movie>, t: Throwable) {
@@ -52,7 +54,7 @@ class ApiDataManager : InteractToApi {
     }
 
     override fun getSimilarMovies(callbackSimilarMovies: OnGetSimilarMoviesDetailsCallback) {
-        service.getSimilarMovies(movieId = MOVIE_ID, apiKey = BuildConfig.API_KEY, language = LANGUAGE)
+        service.getSimilarMovies(movieId = ID_MOVIE, apiKey = API_KEY, language = PORTUGUES)
             .enqueue(object : Callback<SimilarMovies> {
                 override fun onResponse(
                     call: Call<SimilarMovies>,

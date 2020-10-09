@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
-                app:contentScrim="@color/colorBackground"
+                app:contentScrim="@color/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,11 +65,11 @@
                         android:layout_marginBottom="16dp"
                         android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="@string/like"
                         android:focusable="true"
                         android:src="@drawable/ic_favorite_border_black_24dp"
                         app:layout_constraintBottom_toBottomOf="@+id/detailsActivity_imageView_background"
-                        app:layout_constraintEnd_toEndOf="@+id/detailsActivity_imageView_background"
-                        android:contentDescription="@string/like" />
+                        app:layout_constraintEnd_toEndOf="@+id/detailsActivity_imageView_background" />
 
                     <ImageView
                         android:id="@+id/detailsActivity_imageView_likesReady"
@@ -77,11 +77,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="8dp"
+                        android:contentDescription="@string/likes"
                         android:src="@drawable/ic_favorite_white_24dp"
                         android:tint="#FFFFFF"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/detailsActivity_imageView_background"
-                        android:contentDescription="@string/likes" />
+                        app:layout_constraintTop_toBottomOf="@+id/detailsActivity_imageView_background" />
 
                     <TextView
                         android:id="@+id/detailsActivity_textView_likes"
@@ -128,12 +128,12 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginEnd="8dp"
+                        android:contentDescription="@string/views"
                         android:src="@drawable/ic_views"
                         android:tint="#FFFFFF"
                         app:layout_constraintBottom_toBottomOf="@+id/detailsActivity_imageView_likesReady"
                         app:layout_constraintEnd_toStartOf="@+id/detailsActivity_textView_popularity"
-                        app:layout_constraintTop_toTopOf="@+id/detailsActivity_imageView_likesReady"
-                        android:contentDescription="@string/views" />
+                        app:layout_constraintTop_toTopOf="@+id/detailsActivity_imageView_likesReady" />
 
                     <TextView
                         android:id="@+id/textView3"
@@ -156,11 +156,11 @@
                         android:layout_marginTop="24dp"
                         android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="@string/back"
                         android:focusable="true"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/detailsActivity_imageView_background"
-                        app:srcCompat="@drawable/ic_back"
-                        android:contentDescription="@string/back" />
+                        app:srcCompat="@drawable/ic_back" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -170,6 +170,18 @@
         </com.google.android.material.appbar.AppBarLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ImageView
+        android:id="@+id/detailsActivity_imageView_error"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/error"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_signal_cellular_connected_no_internet_0_bar_black_24dp" />
 
     <TextView
         android:id="@+id/detailsActivity_textView_error"
@@ -201,18 +213,6 @@
         app:layout_constraintStart_toStartOf="@+id/detailsActivity_textView_error"
         app:layout_constraintTop_toBottomOf="@+id/detailsActivity_textView_error"
         app:layout_constraintVertical_bias="0.19" />
-
-    <ImageView
-        android:id="@+id/detailsActivity_imageView_error"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
-        android:contentDescription="@string/error"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_signal_cellular_connected_no_internet_0_bar_black_24dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,6 +43,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    //MATERIAL DESGIN
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //SWIPEREFRESH
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
     //RETROFIT
     implementation 'com.squareup.retrofit2:retrofit:2.8.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
@@ -52,13 +58,10 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
-    //Picasso
+    //PICASSO
     implementation "com.squareup.picasso:picasso:2.71828"
-    //Material Design
-    implementation 'com.google.android.material:material:1.1.0'
-    //Dilating dots progressbar
+
+    //DILATING DOTS PROGRESSBAR
     implementation 'com.github.justzak:dilatingdotsprogressbar:1.0.1'
-    //SwipeRefresh
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
 }

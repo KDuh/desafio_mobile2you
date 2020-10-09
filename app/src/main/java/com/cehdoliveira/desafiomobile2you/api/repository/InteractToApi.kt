@@ -1,7 +1,7 @@
 package com.cehdoliveira.desafiomobile2you.api.repository
 
-import com.sayhitoiot.desafiomobile2you.api.OnGetMoviesDetailsCallback
-import com.sayhitoiot.desafiomobile2you.api.OnGetSimilarMoviesDetailsCallback
+import com.cehdoliveira.desafiomobile2you.api.OnGetMoviesDetailsCallback
+import com.cehdoliveira.desafiomobile2you.api.OnGetSimilarMoviesDetailsCallback
 
 
 interface InteractToApi {
